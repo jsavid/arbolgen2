@@ -7,6 +7,8 @@ const data = {
         { id: "Zeferina Freitas", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
         { id: "Dolores Gudiño", level: 0, gender: "male", side: "maternal", subBranch: "teixeira" },
         { id: "María Pucheta", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
+        { id: "Domingo García de Rosas", level: 0, gender: "male", side: "maternal", subBranch: "garcia" },
+        { id: "Patricia O'Connor", level: 0, gender: "female", side: "maternal", subBranch: "garcia" },
 
         // Level 1: Great-Grandparents
         { id: "Jose Gregorio Savid", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
@@ -40,6 +42,7 @@ const data = {
         { id: "hub-ji-ai", level: 0, invisible: true, side: "maternal", subBranch: "garcia" },
         { id: "hub-at-zf", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
         { id: "hub-dg-mp", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
+        { id: "hub-dg-po", level: 0, invisible: true, side: "maternal", subBranch: "garcia" },
         { id: "hub-lg-cg", level: 1, invisible: true, side: "paternal", subBranch: "savid" },
         { id: "hub-ft-mo", level: 1, invisible: true, side: "paternal", subBranch: "torres" },
         { id: "hub-jt-ib", level: 1, invisible: true, side: "maternal", subBranch: "teixeira" },
@@ -60,6 +63,10 @@ const data = {
         { source: "Dolores Gudiño", target: "hub-dg-mp" },
         { source: "María Pucheta", target: "hub-dg-mp" },
         { source: "hub-dg-mp", target: "Isabel Estaurofila Gudiño" },
+
+        { source: "Domingo García de Rosas", target: "hub-dg-po" },
+        { source: "Patricia O'Connor", target: "hub-dg-po" },
+        { source: "hub-dg-po", target: "Cristóbal García" },
 
         { source: "Jose Gregorio Savid", target: "hub-lg-cg" },
         { source: "Carmen García", target: "hub-lg-cg" },
@@ -175,6 +182,7 @@ simulation.on("tick", () => {
         { p1: "Juan Irusta", p2: "Adela Irusta", h: "hub-ji-ai" },
         { p1: "Antonio Teixeira", p2: "Zeferina Freitas", h: "hub-at-zf" },
         { p1: "Dolores Gudiño", p2: "María Pucheta", h: "hub-dg-mp" },
+        { p1: "Domingo García de Rosas", p2: "Patricia O'Connor", h: "hub-dg-po" },
         { p1: "Jose Gregorio Savid", p2: "Carmen García", h: "hub-lg-cg" },
         { p1: "Fenelón V. Torres", p2: "María A. Omil", h: "hub-ft-mo" },
         { p1: "João Teixeira", p2: "Isabel Estaurofila Gudiño", h: "hub-jt-ib" },
