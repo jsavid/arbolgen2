@@ -1,43 +1,52 @@
 const data = {
     nodes: [
-        // Level 0: Great-Grandparents
-        { id: "Jose Gregorio Savid", level: 0, gender: "male", side: "paternal", subBranch: "savid" },
-        { id: "Carmen García", level: 0, gender: "female", side: "paternal", subBranch: "savid" },
-        { id: "Fenelón V. Torres", level: 0, gender: "male", side: "paternal", subBranch: "torres" },
-        { id: "María A. Omil", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
-        { id: "João Teixeira", level: 0, gender: "male", side: "maternal", subBranch: "teixeira" },
-        { id: "Isabel Estaurofila Budiño", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
-        { id: "Cristóbal García", level: 0, gender: "male", side: "maternal", subBranch: "garcia" },
-        { id: "María Irusta", level: 0, gender: "female", side: "maternal", subBranch: "garcia" },
+        // Level 0: Great-Great-Grandparents
+        { id: "Juan Irusta", level: 0, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "Adela Irusta", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
 
-        // Level 1: Grandparents
-        { id: "Jose Tomás Savid García", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
-        { id: "Maria Ángela Torres", level: 1, gender: "female", side: "paternal", subBranch: "torres" },
-        { id: "Juan Jesús Teixeira", level: 1, gender: "male", side: "maternal", subBranch: "teixeira" },
-        { id: "María Luisa García", level: 1, gender: "female", side: "maternal", subBranch: "garcia" },
+        // Level 1: Great-Grandparents
+        { id: "Jose Gregorio Savid", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
+        { id: "Carmen García", level: 1, gender: "female", side: "paternal", subBranch: "savid" },
+        { id: "Fenelón V. Torres", level: 1, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "María A. Omil", level: 1, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "João Teixeira", level: 1, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "Isabel Estaurofila Gudiño", level: 1, gender: "female", side: "maternal", subBranch: "teixeira" },
+        { id: "Cristóbal García", level: 1, gender: "male", side: "maternal", subBranch: "garcia" },
+        { id: "María Fredebinda Irusta", level: 1, gender: "female", side: "maternal", subBranch: "garcia" },
 
-        // Level 2: Parents & Sibling
-        { id: "Luis Eduardo Savid", level: 2, gender: "male", side: "paternal", subBranch: "center" },
-        { id: "Carmen Beatriz Teixeira", level: 2, gender: "female", side: "maternal", subBranch: "center" },
-        { id: "Fenelón Savid", level: 2, gender: "male", side: "paternal", subBranch: "savid" },
-        { id: "Juan Cristóbal Teixeira", level: 2, gender: "male", side: "maternal", subBranch: "teixeira" },
-        { id: "María Isabel Teixeira", level: 2, gender: "female", side: "maternal", subBranch: "teixeira" },
+        // Level 2: Grandparents
+        { id: "Jose Tomás Savid García", level: 2, gender: "male", side: "paternal", subBranch: "savid" },
+        { id: "Maria Ángela Torres", level: 2, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "Juan Jesús Teixeira", level: 2, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "María Luisa García", level: 2, gender: "female", side: "maternal", subBranch: "garcia" },
 
-        // Level 3: Children
-        { id: "Javier Francisco Savid Teixeira", level: 3, gender: "male", side: "center", subBranch: "center" },
-        { id: "Ayelén Savid Teixeira", level: 3, gender: "female", side: "center", subBranch: "center" },
-        { id: "Rayén Savid Teixeira", level: 3, gender: "female", side: "center", subBranch: "center" },
+        // Level 3: Parents & Sibling
+        { id: "Luis Eduardo Savid", level: 3, gender: "male", side: "paternal", subBranch: "center" },
+        { id: "Carmen Beatriz Teixeira", level: 3, gender: "female", side: "maternal", subBranch: "center" },
+        { id: "Fenelón Savid", level: 3, gender: "male", side: "paternal", subBranch: "savid" },
+        { id: "Juan Cristóbal Teixeira", level: 3, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "María Isabel Teixeira", level: 3, gender: "female", side: "maternal", subBranch: "teixeira" },
 
-        // Hidden Hubs (Aligned with families for clean horizontal links)
-        { id: "hub-lg-cg", level: 0, invisible: true, side: "paternal", subBranch: "savid" },
-        { id: "hub-ft-mo", level: 0, invisible: true, side: "paternal", subBranch: "torres" },
-        { id: "hub-jt-ib", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
-        { id: "hub-cg-mi", level: 0, invisible: true, side: "maternal", subBranch: "garcia" },
-        { id: "hub-jt-ma", level: 1, invisible: true, side: "paternal", subBranch: "center" },
-        { id: "hub-jj-ml", level: 1, invisible: true, side: "maternal", subBranch: "center" },
-        { id: "hub-le-cb", level: 2, invisible: true, side: "center", subBranch: "center" }
+        // Level 4: Children
+        { id: "Javier Francisco Savid Teixeira", level: 4, gender: "male", side: "center", subBranch: "center" },
+        { id: "Ayelén Savid Teixeira", level: 4, gender: "female", side: "center", subBranch: "center" },
+        { id: "Rayén Savid Teixeira", level: 4, gender: "female", side: "center", subBranch: "center" },
+
+        // Hidden Hubs
+        { id: "hub-ji-ai", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
+        { id: "hub-lg-cg", level: 1, invisible: true, side: "paternal", subBranch: "savid" },
+        { id: "hub-ft-mo", level: 1, invisible: true, side: "paternal", subBranch: "torres" },
+        { id: "hub-jt-ib", level: 1, invisible: true, side: "maternal", subBranch: "teixeira" },
+        { id: "hub-cg-mi", level: 1, invisible: true, side: "maternal", subBranch: "garcia" },
+        { id: "hub-jt-ma", level: 2, invisible: true, side: "paternal", subBranch: "center" },
+        { id: "hub-jj-ml", level: 2, invisible: true, side: "maternal", subBranch: "center" },
+        { id: "hub-le-cb", level: 3, invisible: true, side: "center", subBranch: "center" }
     ],
     links: [
+        { source: "Juan Irusta", target: "hub-ji-ai" },
+        { source: "Adela Irusta", target: "hub-ji-ai" },
+        { source: "hub-ji-ai", target: "Isabel Estaurofila Gudiño" },
+
         { source: "Jose Gregorio Savid", target: "hub-lg-cg" },
         { source: "Carmen García", target: "hub-lg-cg" },
         { source: "hub-lg-cg", target: "Jose Tomás Savid García" },
@@ -45,10 +54,10 @@ const data = {
         { source: "María A. Omil", target: "hub-ft-mo" },
         { source: "hub-ft-mo", target: "Maria Ángela Torres" },
         { source: "João Teixeira", target: "hub-jt-ib" },
-        { source: "Isabel Estaurofila Budiño", target: "hub-jt-ib" },
+        { source: "Isabel Estaurofila Gudiño", target: "hub-jt-ib" },
         { source: "hub-jt-ib", target: "Juan Jesús Teixeira" },
         { source: "Cristóbal García", target: "hub-cg-mi" },
-        { source: "María Irusta", target: "hub-cg-mi" },
+        { source: "María Fredebinda Irusta", target: "hub-cg-mi" },
         { source: "hub-cg-mi", target: "María Luisa García" },
         { source: "Jose Tomás Savid García", target: "hub-jt-ma" },
         { source: "Maria Ángela Torres", target: "hub-jt-ma" },
@@ -149,10 +158,11 @@ node.filter(d => !d.invisible).append("text")
 simulation.on("tick", () => {
     // Hub logic: Midpoint of parents on X, but STRICT level-between on Y
     const hubs = [
+        { p1: "Juan Irusta", p2: "Adela Irusta", h: "hub-ji-ai" },
         { p1: "Jose Gregorio Savid", p2: "Carmen García", h: "hub-lg-cg" },
         { p1: "Fenelón V. Torres", p2: "María A. Omil", h: "hub-ft-mo" },
-        { p1: "João Teixeira", p2: "Isabel Estaurofila Budiño", h: "hub-jt-ib" },
-        { p1: "Cristóbal García", p2: "María Irusta", h: "hub-cg-mi" },
+        { p1: "João Teixeira", p2: "Isabel Estaurofila Gudiño", h: "hub-jt-ib" },
+        { p1: "Cristóbal García", p2: "María Fredebinda Irusta", h: "hub-cg-mi" },
         { p1: "Jose Tomás Savid García", p2: "Maria Ángela Torres", h: "hub-jt-ma" },
         { p1: "Juan Jesús Teixeira", p2: "María Luisa García", h: "hub-jj-ml" },
         { p1: "Luis Eduardo Savid", p2: "Carmen Beatriz Teixeira", h: "hub-le-cb" }
