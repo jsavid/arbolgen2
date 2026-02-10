@@ -1,8 +1,8 @@
 const data = {
     nodes: [
         // Level 0: Great-Great-Grandparents
-        { id: "Juan Irusta", level: 0, gender: "male", side: "maternal", subBranch: "teixeira" },
-        { id: "Adela Irusta", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
+        { id: "Juan Irusta", level: 0, gender: "male", side: "maternal", subBranch: "garcia" },
+        { id: "Adela Irusta", level: 0, gender: "female", side: "maternal", subBranch: "garcia" },
 
         // Level 1: Great-Grandparents
         { id: "Jose Gregorio Savid", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
@@ -33,7 +33,7 @@ const data = {
         { id: "Rayén Savid Teixeira", level: 4, gender: "female", side: "center", subBranch: "center" },
 
         // Hidden Hubs
-        { id: "hub-ji-ai", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
+        { id: "hub-ji-ai", level: 0, invisible: true, side: "maternal", subBranch: "garcia" },
         { id: "hub-lg-cg", level: 1, invisible: true, side: "paternal", subBranch: "savid" },
         { id: "hub-ft-mo", level: 1, invisible: true, side: "paternal", subBranch: "torres" },
         { id: "hub-jt-ib", level: 1, invisible: true, side: "maternal", subBranch: "teixeira" },
@@ -45,7 +45,7 @@ const data = {
     links: [
         { source: "Juan Irusta", target: "hub-ji-ai" },
         { source: "Adela Irusta", target: "hub-ji-ai" },
-        { source: "hub-ji-ai", target: "Isabel Estaurofila Gudiño" },
+        { source: "hub-ji-ai", target: "María Fredebinda Irusta" },
 
         { source: "Jose Gregorio Savid", target: "hub-lg-cg" },
         { source: "Carmen García", target: "hub-lg-cg" },
