@@ -114,32 +114,41 @@ createGrad("male-grad", "#1e40af", "#1e3a8a");
 createGrad("female-grad", "#be185d", "#9d174d");
 
 // RIGID SPATIAL LOGIC
-const getStaticY = (level) => level * 280 + 150;
+const getStaticY = (level) => level * 350 + 150; // Increased to 350 for more vertical air
 const getTargetX = (d) => {
-    // Extreme horizontal separation to prevent cross-level interference
+    // Hemispheric Separation: Paternal Left (0.15-0.35), Maternal Right (0.65-0.85)
     const subBranch = d.subBranch;
-    if (subBranch === "savid") return width * 0.05;
+    const side = d.side;
+
+    if (subBranch === "savid") return width * 0.15;
     if (subBranch === "torres") return width * 0.35;
     if (subBranch === "teixeira") return width * 0.65;
-    if (subBranch === "garcia") return width * 0.95;
+    if (subBranch === "garcia") return width * 0.85;
+
+    // Default/Center (Hijos, Parents Hub)
     return width * 0.5;
 };
 
-// Initial Setup: Unlock Y for movement but start them perfectly leveled
+// Initial Setup: Deterministic placement based on branch
 data.nodes.forEach(d => {
-    d.y = d.level * 280 + 150;
-    d.x = getTargetX(d) + (Math.random() - 0.5) * 100;
+    d.y = d.level * 350 + 150;
+    d.x = getTargetX(d); // Strictly start in the correct lane
 });
 
 const simulation = d3.forceSimulation(data.nodes)
     .alphaDecay(0.01)
     .velocityDecay(0.5)
-    .force("link", d3.forceLink(data.links).id(d => d.id).distance(120).strength(0.1))
-    .force("charge", d3.forceManyBody().strength(-3000).distanceMax(2000)) // Softer repulsion
+    .force("link", d3.forceLink(data.links).id(d => d.id).distance(d => {
+        const level = d.source.level;
+        // Marriage: Scale distance by level
+        if (d.target.invisible) return 20 + level * 20;
+        return 200; // Vertical spacing
+    }).strength(0.2))
+    .force("charge", d3.forceManyBody().strength(-800).distanceMax(2000))
     .force("center", d3.forceCenter(width / 2, height * 0.45))
-    .force("y", d3.forceY(d => d.level * 280 + 150).strength(15)) // EXTREME LEVEL LOCK
-    .force("x", d3.forceX(d => getTargetX(d)).strength(1.2))
-    .force("collide", d3.forceCollide().radius(140).strength(1));
+    .force("y", d3.forceY(d => d.level * 350 + 150).strength(40)) // UNBREAKABLE LEVEL SNAP
+    .force("x", d3.forceX(d => getTargetX(d)).strength(1.5))
+    .force("collide", d3.forceCollide().radius(d => d.invisible ? 30 : 85).strength(1));
 
 // Analog Breathing (Gentle)
 d3.timer((elapsed) => {
@@ -162,18 +171,26 @@ const node = containerG.append("g").selectAll("g").data(data.nodes).join("g")
         .on("end", (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
 
 node.filter(d => !d.invisible).append("circle")
-    .attr("r", 70)
+    .attr("r", 55) // Smaller for better alignment
     .attr("fill", d => d.gender === "male" ? "url(#male-grad)" : "url(#female-grad)")
     .attr("filter", "drop-shadow(0 10px 15px rgba(0,0,0,0.4))");
 
 node.filter(d => !d.invisible).append("text")
-    .selectAll("tspan").data(d => {
-        const parts = d.id.split(" ");
-        if (parts.length > 3) return [parts.slice(0, 2).join(" "), parts.slice(2).join(" ")];
-        return parts;
-    }).join("tspan")
+    .style("font-size", "12px")
+    .style("font-weight", "600")
+    .selectAll("tspan").data(d => d.id.split(" ")).join("tspan")
     .attr("x", 0)
-    .attr("dy", (d, i, ns) => i === 0 ? (-(ns.length - 1) * 0.6 + 0.3) + "em" : "1.2em")
+    .attr("dy", (d, i, ns) => {
+        // Center the entire block vertically
+        const totalLines = ns.length;
+        const lineHeight = 1.1; // em
+        if (i === 0) {
+            // First line offset: move up by half of total height, 
+            // but add a small constant (0.3em) to account for font baseline
+            return (-(totalLines - 1) * lineHeight / 2 + 0.3) + "em";
+        }
+        return lineHeight + "em";
+    })
     .text(d => d);
 
 simulation.on("tick", () => {
@@ -201,10 +218,28 @@ simulation.on("tick", () => {
     });
 
     link.attr("d", d => {
-        const x1 = d.source.x, y1 = d.source.y, x2 = d.target.x, y2 = d.target.y;
+        let x1 = d.source.x, y1 = d.source.y, x2 = d.target.x, y2 = d.target.y;
+        const r = 55; // Updated radius
 
-        // Parent to Hub (Marriage) or Hub to Child (Descendant)
-        // Everything is a straight line, but marriage is horizontal due to forceY
+        // Distance and direction
+        const dx = x2 - x1, dy = y2 - y1;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 1) return `M ${x1},${y1} L ${x2},${y2}`;
+
+        // Unit vector
+        const ux = dx / dist, uy = dy / dist;
+
+        // Clip source if it's a visible node
+        if (!d.source.invisible) {
+            x1 += ux * r;
+            y1 += uy * r;
+        }
+        // Clip target if it's a visible node
+        if (!d.target.invisible) {
+            x2 -= ux * r;
+            y2 -= uy * r;
+        }
+
         return `M ${x1},${y1} L ${x2},${y2}`;
     });
 
