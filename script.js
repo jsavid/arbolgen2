@@ -3,6 +3,10 @@ const data = {
         // Level 0: Great-Great-Grandparents
         { id: "Juan Irusta", level: 0, gender: "male", side: "maternal", subBranch: "garcia" },
         { id: "Adela Irusta", level: 0, gender: "female", side: "maternal", subBranch: "garcia" },
+        { id: "Antonio Teixeira", level: 0, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "Zeferina Freitas", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
+        { id: "Dolores Gudiño", level: 0, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "María Pucheta", level: 0, gender: "female", side: "maternal", subBranch: "teixeira" },
 
         // Level 1: Great-Grandparents
         { id: "Jose Gregorio Savid", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
@@ -34,6 +38,8 @@ const data = {
 
         // Hidden Hubs
         { id: "hub-ji-ai", level: 0, invisible: true, side: "maternal", subBranch: "garcia" },
+        { id: "hub-at-zf", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
+        { id: "hub-dg-mp", level: 0, invisible: true, side: "maternal", subBranch: "teixeira" },
         { id: "hub-lg-cg", level: 1, invisible: true, side: "paternal", subBranch: "savid" },
         { id: "hub-ft-mo", level: 1, invisible: true, side: "paternal", subBranch: "torres" },
         { id: "hub-jt-ib", level: 1, invisible: true, side: "maternal", subBranch: "teixeira" },
@@ -46,6 +52,14 @@ const data = {
         { source: "Juan Irusta", target: "hub-ji-ai" },
         { source: "Adela Irusta", target: "hub-ji-ai" },
         { source: "hub-ji-ai", target: "María Fredebinda Irusta" },
+
+        { source: "Antonio Teixeira", target: "hub-at-zf" },
+        { source: "Zeferina Freitas", target: "hub-at-zf" },
+        { source: "hub-at-zf", target: "João Teixeira" },
+
+        { source: "Dolores Gudiño", target: "hub-dg-mp" },
+        { source: "María Pucheta", target: "hub-dg-mp" },
+        { source: "hub-dg-mp", target: "Isabel Estaurofila Gudiño" },
 
         { source: "Jose Gregorio Savid", target: "hub-lg-cg" },
         { source: "Carmen García", target: "hub-lg-cg" },
@@ -159,6 +173,8 @@ simulation.on("tick", () => {
     // Hub logic: Midpoint of parents on X, but STRICT level-between on Y
     const hubs = [
         { p1: "Juan Irusta", p2: "Adela Irusta", h: "hub-ji-ai" },
+        { p1: "Antonio Teixeira", p2: "Zeferina Freitas", h: "hub-at-zf" },
+        { p1: "Dolores Gudiño", p2: "María Pucheta", h: "hub-dg-mp" },
         { p1: "Jose Gregorio Savid", p2: "Carmen García", h: "hub-lg-cg" },
         { p1: "Fenelón V. Torres", p2: "María A. Omil", h: "hub-ft-mo" },
         { p1: "João Teixeira", p2: "Isabel Estaurofila Gudiño", h: "hub-jt-ib" },
