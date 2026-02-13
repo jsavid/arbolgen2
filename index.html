@@ -13,20 +13,27 @@
 </head>
 
 <body>
-    <header>
-        <h1>Linaje Savid Teixeira</h1>
-        <p> </p>
-    </header>
-
     <div id="tree-container">
         <svg id="genealogy-tree"></svg>
     </div>
 
-    <footer>
-        <p>Hecho con ❤️ para la familia Savid Teixeira</p>
-    </footer>
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button id="close-modal">&times;</button>
+            <div class="profile-header">
+                <img id="profile-photo" src="" alt="Foto de perfil">
+                <h2 id="profile-name">Nombre Apellido</h2>
+            </div>
+            <div class="profile-body">
+                <p id="profile-bio">Cargando información...</p>
+            </div>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="bios.js"></script>
+    <script src="script.js?v=1.1"></script>
 </body>
 
 </html>
