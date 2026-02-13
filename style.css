@@ -211,3 +211,19 @@ svg {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
 }
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        padding: 2.5rem 1.5rem 1.5rem;
+        width: 95%;
+        border-radius: 20px;
+    }
+    .profile-header img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+    #profile-name { font-size: 1.5rem; }
+    .profile-body { font-size: 1rem; max-height: 350px; }
+    #close-modal { top: 0.8rem; right: 1.2rem; font-size: 2rem; }
+}

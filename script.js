@@ -302,7 +302,9 @@ card.on("click", function (event, d) {
 // Final Focus
 const javier = nodes.find(n => n.id === "Javier Francisco Savid Teixeira");
 if (javier) {
-    const s = 0.6;
+    // Zoom out more for mobile devices
+    const isMobile = window.innerWidth <= 768;
+    const s = isMobile ? 0.35 : 0.6;
     svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2 - javier.x * s, height / 2 - javier.y * s).scale(s));
 }
 
