@@ -9,6 +9,8 @@ const data = {
         { id: "Agustina Montaño", level: 0, gender: "female", side: "paternal", subBranch: "garcia" },
         { id: "Fernando García", level: 0, gender: "male", side: "paternal", subBranch: "garcia" },
         { id: "Juana Josefa Zavalía", level: 0, gender: "female", side: "paternal", subBranch: "garcia" },
+        { id: "Emiliano Enderek", level: 0, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Eloísa Díaz", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
 
         // Level 1: Great-Great-Great-Grandparents
         { id: "Domingo del Rosario Savid Mansilla", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
@@ -23,12 +25,16 @@ const data = {
         { id: "María Pucheta", level: 1, gender: "female", side: "maternal", subBranch: "teixeira" },
         { id: "Domingo García de Rosas", level: 1, gender: "male", side: "maternal", subBranch: "garcia" },
         { id: "Patricia O'Connor", level: 1, gender: "female", side: "maternal", subBranch: "garcia" },
+        { id: "Moisés Omil", level: 1, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Mercedes Endrek", level: 1, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "Fenelón Torres Recabarren", level: 1, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Rita Martínez", level: 1, gender: "female", side: "paternal", subBranch: "torres" },
 
         // Level 2: Great-Great-Grandparents
         { id: "José Gregorio Savid Carballo", level: 2, gender: "male", side: "paternal", subBranch: "savid" },
         { id: "Carmen García Zavalla", level: 2, gender: "female", side: "paternal", subBranch: "savid" },
-        { id: "Fenelón V. Torres", level: 2, gender: "male", side: "paternal", subBranch: "torres" },
-        { id: "María A. Omil", level: 2, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "Fenelón Victoriano Torres Martínez", level: 2, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "María Ángeles Omil", level: 2, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "João Teixeira", level: 2, gender: "male", side: "maternal", subBranch: "teixeira" },
         { id: "Isabel Estaurofila Gudiño", level: 2, gender: "female", side: "maternal", subBranch: "teixeira" },
         { id: "Cristóbal García", level: 2, gender: "male", side: "maternal", subBranch: "garcia" },
@@ -57,14 +63,17 @@ const data = {
         { id: "hub-jc-rc", level: 0, isHub: true, p1: "Javier Carballo", p2: "Rosario Carrilo Albornoz" },
         { id: "hub-rg-am", level: 0, isHub: true, p1: "Rafael García", p2: "Agustina Montaño" },
         { id: "hub-fg-jjz", level: 0, isHub: true, p1: "Fernando García", p2: "Juana Josefa Zavalía" },
+        { id: "hub-ee-ed", level: 0, isHub: true, p1: "Emiliano Enderek", p2: "Eloísa Díaz" },
         { id: "hub-tg-jz", level: 1, isHub: true, p1: "Tomás García Montaño", p2: "Juana de Zavalía y García" },
         { id: "hub-dm-rc", level: 1, isHub: true, p1: "Domingo del Rosario Savid Mansilla", p2: "Rosario Carballo y Carrillo" },
         { id: "hub-ji-ai", level: 1, isHub: true, p1: "Juan Irusta", p2: "Adela Irusta" },
         { id: "hub-at-zf", level: 1, isHub: true, p1: "Antonio Teixeira", p2: "Zeferina Freitas" },
         { id: "hub-dg-mp", level: 1, isHub: true, p1: "Dolores Gudiño", p2: "María Pucheta" },
         { id: "hub-dg-po", level: 1, isHub: true, p1: "Domingo García de Rosas", p2: "Patricia O'Connor" },
+        { id: "hub-mo-me", level: 1, isHub: true, p1: "Moisés Omil", p2: "Mercedes Endrek" },
+        { id: "hub-ft-rm", level: 1, isHub: true, p1: "Fenelón Torres Recabarren", p2: "Rita Martínez" },
         { id: "hub-lg-cg", level: 2, isHub: true, p1: "José Gregorio Savid Carballo", p2: "Carmen García Zavalla" },
-        { id: "hub-ft-mo", level: 2, isHub: true, p1: "Fenelón V. Torres", p2: "María A. Omil" },
+        { id: "hub-ft-mo", level: 2, isHub: true, p1: "Fenelón Victoriano Torres Martínez", p2: "María Ángeles Omil" },
         { id: "hub-jt-ib", level: 2, isHub: true, p1: "João Teixeira", p2: "Isabel Estaurofila Gudiño" },
         { id: "hub-cg-mi", level: 2, isHub: true, p1: "Cristóbal García", p2: "María Fredebinda Irusta" },
         { id: "hub-jt-ma", level: 3, isHub: true, p1: "Maria Ángela Torres", p2: "Jose Tomás Savid García" },
@@ -76,14 +85,17 @@ const data = {
         { source: "Javier Carballo", target: "hub-jc-rc" }, { source: "Rosario Carrilo Albornoz", target: "hub-jc-rc" },
         { source: "Rafael García", target: "hub-rg-am" }, { source: "Agustina Montaño", target: "hub-rg-am" },
         { source: "Fernando García", target: "hub-fg-jjz" }, { source: "Juana Josefa Zavalía", target: "hub-fg-jjz" },
+        { source: "Emiliano Enderek", target: "hub-ee-ed" }, { source: "Eloísa Díaz", target: "hub-ee-ed" },
         { source: "Tomás García Montaño", target: "hub-tg-jz" }, { source: "Juana de Zavalía y García", target: "hub-tg-jz" },
         { source: "Domingo del Rosario Savid Mansilla", target: "hub-dm-rc" }, { source: "Rosario Carballo y Carrillo", target: "hub-dm-rc" },
         { source: "Juan Irusta", target: "hub-ji-ai" }, { source: "Adela Irusta", target: "hub-ji-ai" },
         { source: "Antonio Teixeira", target: "hub-at-zf" }, { source: "Zeferina Freitas", target: "hub-at-zf" },
         { source: "Dolores Gudiño", target: "hub-dg-mp" }, { source: "María Pucheta", target: "hub-dg-mp" },
         { source: "Domingo García de Rosas", target: "hub-dg-po" }, { source: "Patricia O'Connor", target: "hub-dg-po" },
+        { source: "Moisés Omil", target: "hub-mo-me" }, { source: "Mercedes Endrek", target: "hub-mo-me" },
+        { source: "Fenelón Torres Recabarren", target: "hub-ft-rm" }, { source: "Rita Martínez", target: "hub-ft-rm" },
         { source: "José Gregorio Savid Carballo", target: "hub-lg-cg" }, { source: "Carmen García Zavalla", target: "hub-lg-cg" },
-        { source: "Fenelón V. Torres", target: "hub-ft-mo" }, { source: "María A. Omil", target: "hub-ft-mo" },
+        { source: "Fenelón Victoriano Torres Martínez", target: "hub-ft-mo" }, { source: "María Ángeles Omil", target: "hub-ft-mo" },
         { source: "João Teixeira", target: "hub-jt-ib" }, { source: "Isabel Estaurofila Gudiño", target: "hub-jt-ib" },
         { source: "Cristóbal García", target: "hub-cg-mi" }, { source: "María Fredebinda Irusta", target: "hub-cg-mi" },
         { source: "Jose Tomás Savid García", target: "hub-jt-ma" }, { source: "Maria Ángela Torres", target: "hub-jt-ma" },
@@ -95,6 +107,9 @@ const data = {
         { source: "hub-fg-jjz", target: "Juana de Zavalía y García" }, { source: "hub-tg-jz", target: "Carmen García Zavalla" },
         { source: "hub-ji-ai", target: "María Fredebinda Irusta" }, { source: "hub-at-zf", target: "João Teixeira" },
         { source: "hub-dg-mp", target: "Isabel Estaurofila Gudiño" }, { source: "hub-dg-po", target: "Cristóbal García" },
+        { source: "hub-mo-me", target: "María Ángeles Omil" },
+        { source: "hub-ee-ed", target: "Mercedes Endrek" },
+        { source: "hub-ft-rm", target: "Fenelón Victoriano Torres Martínez" },
         { source: "hub-lg-cg", target: "Jose Tomás Savid García" }, { source: "hub-ft-mo", target: "Maria Ángela Torres" },
         { source: "hub-jt-ib", target: "Juan Jesús Teixeira" }, { source: "hub-cg-mi", target: "María Luisa García" },
         { source: "hub-jt-ma", target: "Luis Eduardo Savid" }, { source: "hub-jt-ma", target: "Fenelón Savid" },
@@ -105,10 +120,10 @@ const data = {
 };
 
 // --- CONFIGURATION ---
-const CARD_W = 220;
-const CARD_H = 80;
+const CARD_W = 260;
+const CARD_H = 90;
 const LEVEL_H = 300;
-const FAMILY_GAP = 120; // Distance between family units
+const FAMILY_GAP = 150; // Distance between family units
 
 const width = window.innerWidth;
 const height = window.innerHeight;
