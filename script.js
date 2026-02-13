@@ -281,7 +281,6 @@ function showProfile(d) {
             modalBio.text(text);
         }
     } else {
-        // Fallback or legacy (if you decide to use a server later)
         modalBio.text(`${d.id}`);
     }
 }
