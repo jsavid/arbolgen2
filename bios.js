@@ -40,9 +40,13 @@ const BIO_DATA = {
     "Tomas_Garcia_Montano": "Tomas Garcia Montano",
     "Mercedes_Endrek": "Mercedes Endrek",
     "Moises_Omil": "Moisés Omil",
+    "Angela_Paez": "Ángela Páez",
+    "Antonio_Omil": "Antonio Omil",
     "Fenelon_Torres_Recabarren": "Fenelón Torres Recabarren",
     "Rita_Martinez": "Rita Martínez",
     "Emiliano_Enderek": "Emiliano Enderek",
     "Eloisa_Diaz": "Eloísa Díaz",
+    "Hugo_Gines_de_Paco": "Hugo Ginés de Paco",
+    "Mayra_de_Paco": "Mayra de Paco",
     "Zeferina_Freitas": "Zeferina Freitas"
 };

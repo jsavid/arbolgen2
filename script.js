@@ -11,6 +11,8 @@ const data = {
         { id: "Juana Josefa Zavalía", level: 0, gender: "female", side: "paternal", subBranch: "garcia" },
         { id: "Emiliano Enderek", level: 0, gender: "male", side: "paternal", subBranch: "torres" },
         { id: "Eloísa Díaz", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "Moisés Omil", level: 0, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Ángela Páez", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
 
         // Level 1: Great-Great-Great-Grandparents
         { id: "Domingo del Rosario Savid Mansilla", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
@@ -25,7 +27,7 @@ const data = {
         { id: "María Pucheta", level: 1, gender: "female", side: "maternal", subBranch: "teixeira" },
         { id: "Domingo García de Rosas", level: 1, gender: "male", side: "maternal", subBranch: "garcia" },
         { id: "Patricia O'Connor", level: 1, gender: "female", side: "maternal", subBranch: "garcia" },
-        { id: "Moisés Omil", level: 1, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Antonio Omil", level: 1, gender: "male", side: "paternal", subBranch: "torres" },
         { id: "Mercedes Endrek", level: 1, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "Fenelón Torres Recabarren", level: 1, gender: "male", side: "paternal", subBranch: "torres" },
         { id: "Rita Martínez", level: 1, gender: "female", side: "paternal", subBranch: "torres" },
@@ -44,6 +46,7 @@ const data = {
         { id: "Jose Tomás Savid García", level: 3, gender: "male", side: "paternal", subBranch: "savid" },
         { id: "Maria Ángela Torres", level: 3, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "Juan Jesús Teixeira", level: 3, gender: "male", side: "maternal", subBranch: "teixeira" },
+        { id: "Hugo Ginés de Paco", level: 3, gender: "male", side: "paternal", subBranch: "torres" },
         { id: "María Luisa García", level: 3, gender: "female", side: "maternal", subBranch: "garcia" },
 
         // Level 4: Grandparents
@@ -52,6 +55,7 @@ const data = {
         { id: "Luis Eduardo Savid", level: 4, gender: "male", side: "paternal", subBranch: "center" },
         { id: "Juan Cristóbal Teixeira", level: 4, gender: "male", side: "maternal", subBranch: "teixeira" },
         { id: "María Isabel Teixeira", level: 4, gender: "female", side: "maternal", subBranch: "teixeira" },
+        { id: "Mayra de Paco", level: 4, gender: "female", side: "paternal", subBranch: "torres" },
 
         // Level 5: Parents & Sibling
         { id: "Javier Francisco Savid Teixeira", level: 5, gender: "male", side: "center", subBranch: "center" },
@@ -70,7 +74,8 @@ const data = {
         { id: "hub-at-zf", level: 1, isHub: true, p1: "Antonio Teixeira", p2: "Zeferina Freitas" },
         { id: "hub-dg-mp", level: 1, isHub: true, p1: "Dolores Gudiño", p2: "María Pucheta" },
         { id: "hub-dg-po", level: 1, isHub: true, p1: "Domingo García de Rosas", p2: "Patricia O'Connor" },
-        { id: "hub-mo-me", level: 1, isHub: true, p1: "Moisés Omil", p2: "Mercedes Endrek" },
+        { id: "hub-mo-ap", level: 0, isHub: true, p1: "Moisés Omil", p2: "Ángela Páez" },
+        { id: "hub-ao-me", level: 1, isHub: true, p1: "Antonio Omil", p2: "Mercedes Endrek" },
         { id: "hub-ft-rm", level: 1, isHub: true, p1: "Fenelón Torres Recabarren", p2: "Rita Martínez" },
         { id: "hub-lg-cg", level: 2, isHub: true, p1: "José Gregorio Savid Carballo", p2: "Carmen García Zavalla" },
         { id: "hub-ft-mo", level: 2, isHub: true, p1: "Fenelón Victoriano Torres Martínez", p2: "María Ángeles Omil" },
@@ -78,6 +83,7 @@ const data = {
         { id: "hub-cg-mi", level: 2, isHub: true, p1: "Cristóbal García", p2: "María Fredebinda Irusta" },
         { id: "hub-jt-ma", level: 3, isHub: true, p1: "Maria Ángela Torres", p2: "Jose Tomás Savid García" },
         { id: "hub-jj-ml", level: 3, isHub: true, p1: "Juan Jesús Teixeira", p2: "María Luisa García" },
+        { id: "hub-hg-ma", level: 3, isHub: true, p1: "Hugo Ginés de Paco", p2: "Maria Ángela Torres" },
         { id: "hub-le-cb", level: 4, isHub: true, p1: "Luis Eduardo Savid", p2: "Carmen Beatriz Teixeira" }
     ],
     links: [
@@ -92,7 +98,8 @@ const data = {
         { source: "Antonio Teixeira", target: "hub-at-zf" }, { source: "Zeferina Freitas", target: "hub-at-zf" },
         { source: "Dolores Gudiño", target: "hub-dg-mp" }, { source: "María Pucheta", target: "hub-dg-mp" },
         { source: "Domingo García de Rosas", target: "hub-dg-po" }, { source: "Patricia O'Connor", target: "hub-dg-po" },
-        { source: "Moisés Omil", target: "hub-mo-me" }, { source: "Mercedes Endrek", target: "hub-mo-me" },
+        { source: "Moisés Omil", target: "hub-mo-ap" }, { source: "Ángela Páez", target: "hub-mo-ap" },
+        { source: "Antonio Omil", target: "hub-ao-me" }, { source: "Mercedes Endrek", target: "hub-ao-me" },
         { source: "Fenelón Torres Recabarren", target: "hub-ft-rm" }, { source: "Rita Martínez", target: "hub-ft-rm" },
         { source: "José Gregorio Savid Carballo", target: "hub-lg-cg" }, { source: "Carmen García Zavalla", target: "hub-lg-cg" },
         { source: "Fenelón Victoriano Torres Martínez", target: "hub-ft-mo" }, { source: "María Ángeles Omil", target: "hub-ft-mo" },
@@ -100,6 +107,7 @@ const data = {
         { source: "Cristóbal García", target: "hub-cg-mi" }, { source: "María Fredebinda Irusta", target: "hub-cg-mi" },
         { source: "Jose Tomás Savid García", target: "hub-jt-ma" }, { source: "Maria Ángela Torres", target: "hub-jt-ma" },
         { source: "Juan Jesús Teixeira", target: "hub-jj-ml" }, { source: "María Luisa García", target: "hub-jj-ml" },
+        { source: "Hugo Ginés de Paco", target: "hub-hg-ma" }, { source: "Maria Ángela Torres", target: "hub-hg-ma" },
         { source: "Luis Eduardo Savid", target: "hub-le-cb" }, { source: "Carmen Beatriz Teixeira", target: "hub-le-cb" },
 
         { source: "hub-gs-im", target: "Domingo del Rosario Savid Mansilla" }, { source: "hub-jc-rc", target: "Rosario Carballo y Carrillo" },
@@ -107,10 +115,12 @@ const data = {
         { source: "hub-fg-jjz", target: "Juana de Zavalía y García" }, { source: "hub-tg-jz", target: "Carmen García Zavalla" },
         { source: "hub-ji-ai", target: "María Fredebinda Irusta" }, { source: "hub-at-zf", target: "João Teixeira" },
         { source: "hub-dg-mp", target: "Isabel Estaurofila Gudiño" }, { source: "hub-dg-po", target: "Cristóbal García" },
-        { source: "hub-mo-me", target: "María Ángeles Omil" },
+        { source: "hub-mo-ap", target: "Antonio Omil" },
+        { source: "hub-ao-me", target: "María Ángeles Omil" },
         { source: "hub-ee-ed", target: "Mercedes Endrek" },
         { source: "hub-ft-rm", target: "Fenelón Victoriano Torres Martínez" },
         { source: "hub-lg-cg", target: "Jose Tomás Savid García" }, { source: "hub-ft-mo", target: "Maria Ángela Torres" },
+        { source: "hub-hg-ma", target: "Mayra de Paco" },
         { source: "hub-jt-ib", target: "Juan Jesús Teixeira" }, { source: "hub-cg-mi", target: "María Luisa García" },
         { source: "hub-jt-ma", target: "Luis Eduardo Savid" }, { source: "hub-jt-ma", target: "Fenelón Savid" },
         { source: "hub-jj-ml", target: "Carmen Beatriz Teixeira" }, { source: "hub-jj-ml", target: "Juan Cristóbal Teixeira" },
@@ -211,6 +221,43 @@ hubs.forEach(h => {
             c.x = h.x - totalW / 2 + i * (CARD_W + 50);
             c.y = c.level * LEVEL_H + 200;
         });
+    }
+});
+
+// Post-pass for secondary marriages (e.g., Hugo Ginés de Paco)
+hubs.forEach(h => {
+    if (h.x !== undefined) return;
+    const p1 = nodes.find(n => n.id === h.p1);
+    const p2 = nodes.find(n => n.id === h.p2);
+
+    if (p1.x !== undefined || p2.x !== undefined) {
+        const parentLevel = p1.level;
+        h.y = parentLevel * LEVEL_H + 200 + CARD_H / 2;
+        h.branchOffset = ((hubs.indexOf(h) % 4) - 2) * 15;
+
+        if (p1.x !== undefined && p2.x === undefined) {
+            // Place p2 to the left of p1
+            h.x = p1.x + CARD_W / 2 - (CARD_W / 2 + 50);
+            p2.x = h.x - (CARD_W / 2 + 50) - CARD_W / 2;
+            p2.y = p1.y;
+        } else if (p2.x !== undefined && p1.x === undefined) {
+            // Place p1 to the left of p2
+            h.x = p2.x + CARD_W / 2 - (CARD_W / 2 + 50);
+            p1.x = h.x - (CARD_W / 2 + 50) - CARD_W / 2;
+            p1.y = p2.y;
+        } else if (p1.x !== undefined && p2.x !== undefined) {
+            h.x = (p1.x + p2.x) / 2 + CARD_W / 2;
+        }
+
+        // Position children of this new hub
+        const children = nodes.filter(n => n.parentsHub === h);
+        if (children.length > 0) {
+            const totalW = children.length * (CARD_W + 50);
+            children.forEach((c, i) => {
+                c.x = h.x - totalW / 2 + i * (CARD_W + 50);
+                c.y = c.level * LEVEL_H + 200;
+            });
+        }
     }
 });
 
