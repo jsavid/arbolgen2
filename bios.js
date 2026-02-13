@@ -27,7 +27,7 @@ const BIO_DATA = {
     "Juan_Jesus_Teixeira": "El Tatá\nEl Caco",
     "Luis_Eduardo_Savid": "El Lichi",
     "Maria_Angela_Torres": "Alita",
-    "Maria_A_Omil": "Maria A. Omil",
+    "Maria_A_Omil": "La Yaya",
     "Maria_Fredebinda_Irusta": "La abuela pollito",
     "Maria_Isabel_Teixeira": "Marita",
     "Maria_Luisa_Garcia": "La Tatá",
