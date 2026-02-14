@@ -45,6 +45,7 @@ const data = {
         // Level 3: Great-Grandparents
         { id: "Jose Tomás Savid García", level: 3, gender: "male", side: "paternal", subBranch: "savid" },
         { id: "Maria Ángela Torres", level: 3, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "Ester del Rosario Torres Martínez", level: 3, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "Juan Jesús Teixeira", level: 3, gender: "male", side: "maternal", subBranch: "teixeira" },
         { id: "Hugo Ginés de Paco", level: 3, gender: "male", side: "paternal", subBranch: "torres" },
         { id: "Blanca Ramos", level: 3, gender: "female", side: "paternal", subBranch: "torres" },
@@ -123,6 +124,7 @@ const data = {
         { source: "hub-ee-ed", target: "Mercedes Endrek" },
         { source: "hub-ft-rm", target: "Fenelón Victoriano Torres Martínez" },
         { source: "hub-lg-cg", target: "Jose Tomás Savid García" }, { source: "hub-ft-mo", target: "Maria Ángela Torres" },
+        { source: "hub-ft-mo", target: "Ester del Rosario Torres Martínez" },
         { source: "hub-hg-ma", target: "Mayra de Paco" },
         { source: "hub-jt-ib", target: "Juan Jesús Teixeira" }, { source: "hub-cg-mi", target: "María Luisa García" },
         { source: "hub-jt-ma", target: "Luis Eduardo Savid" }, { source: "hub-jt-ma", target: "Fenelón Savid" },
@@ -263,6 +265,15 @@ hubs.forEach(h => {
         }
     }
 });
+
+// Custom positioning for Ester del Rosario Torres Martínez
+const ester = nodes.find(n => n.id === "Ester del Rosario Torres Martínez");
+const blanca = nodes.find(n => n.id === "Blanca Ramos");
+if (ester && blanca && blanca.x !== undefined) {
+    // Put Ester to the left of Blanca
+    ester.x = blanca.x - (CARD_W + 50);
+    ester.y = blanca.y;
+}
 
 // Safeguard for unpositioned nodes
 nodes.forEach(n => {
