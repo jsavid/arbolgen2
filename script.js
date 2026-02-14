@@ -47,6 +47,7 @@ const data = {
         { id: "Maria Ángela Torres", level: 3, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "Juan Jesús Teixeira", level: 3, gender: "male", side: "maternal", subBranch: "teixeira" },
         { id: "Hugo Ginés de Paco", level: 3, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Blanca Ramos", level: 3, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "María Luisa García", level: 3, gender: "female", side: "maternal", subBranch: "garcia" },
 
         // Level 4: Grandparents
@@ -84,6 +85,7 @@ const data = {
         { id: "hub-jt-ma", level: 3, isHub: true, p1: "Maria Ángela Torres", p2: "Jose Tomás Savid García" },
         { id: "hub-jj-ml", level: 3, isHub: true, p1: "Juan Jesús Teixeira", p2: "María Luisa García" },
         { id: "hub-hg-ma", level: 3, isHub: true, p1: "Hugo Ginés de Paco", p2: "Maria Ángela Torres" },
+        { id: "hub-hg-br", level: 3, isHub: true, p1: "Hugo Ginés de Paco", p2: "Blanca Ramos" },
         { id: "hub-le-cb", level: 4, isHub: true, p1: "Luis Eduardo Savid", p2: "Carmen Beatriz Teixeira" }
     ],
     links: [
@@ -108,6 +110,7 @@ const data = {
         { source: "Jose Tomás Savid García", target: "hub-jt-ma" }, { source: "Maria Ángela Torres", target: "hub-jt-ma" },
         { source: "Juan Jesús Teixeira", target: "hub-jj-ml" }, { source: "María Luisa García", target: "hub-jj-ml" },
         { source: "Hugo Ginés de Paco", target: "hub-hg-ma" }, { source: "Maria Ángela Torres", target: "hub-hg-ma" },
+        { source: "Hugo Ginés de Paco", target: "hub-hg-br" }, { source: "Blanca Ramos", target: "hub-hg-br" },
         { source: "Luis Eduardo Savid", target: "hub-le-cb" }, { source: "Carmen Beatriz Teixeira", target: "hub-le-cb" },
 
         { source: "hub-gs-im", target: "Domingo del Rosario Savid Mansilla" }, { source: "hub-jc-rc", target: "Rosario Carballo y Carrillo" },
