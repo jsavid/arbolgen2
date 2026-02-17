@@ -13,6 +13,8 @@ const data = {
         { id: "Eloísa Díaz", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
         { id: "Moisés Omil", level: 0, gender: "male", side: "paternal", subBranch: "torres" },
         { id: "Ángela Páez", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
+        { id: "Arístides Torres", level: 0, gender: "male", side: "paternal", subBranch: "torres" },
+        { id: "Desideria Arias", level: 0, gender: "female", side: "paternal", subBranch: "torres" },
 
         // Level 1: Great-Great-Great-Grandparents
         { id: "Domingo del Rosario Savid Mansilla", level: 1, gender: "male", side: "paternal", subBranch: "savid" },
@@ -87,6 +89,7 @@ const data = {
         { id: "hub-jj-ml", level: 3, isHub: true, p1: "Juan Jesús Teixeira", p2: "María Luisa García" },
         { id: "hub-hg-ma", level: 3, isHub: true, p1: "Hugo Ginés de Paco", p2: "Maria Ángela Torres" },
         { id: "hub-hg-br", level: 3, isHub: true, p1: "Hugo Ginés de Paco", p2: "Blanca Ramos" },
+        { id: "hub-at-da", level: 0, isHub: true, p1: "Arístides Torres", p2: "Desideria Arias" },
         { id: "hub-le-cb", level: 4, isHub: true, p1: "Luis Eduardo Savid", p2: "Carmen Beatriz Teixeira" }
     ],
     links: [
@@ -112,6 +115,7 @@ const data = {
         { source: "Juan Jesús Teixeira", target: "hub-jj-ml" }, { source: "María Luisa García", target: "hub-jj-ml" },
         { source: "Hugo Ginés de Paco", target: "hub-hg-ma" }, { source: "Maria Ángela Torres", target: "hub-hg-ma" },
         { source: "Hugo Ginés de Paco", target: "hub-hg-br" }, { source: "Blanca Ramos", target: "hub-hg-br" },
+        { source: "Arístides Torres", target: "hub-at-da" }, { source: "Desideria Arias", target: "hub-at-da" },
         { source: "Luis Eduardo Savid", target: "hub-le-cb" }, { source: "Carmen Beatriz Teixeira", target: "hub-le-cb" },
 
         { source: "hub-gs-im", target: "Domingo del Rosario Savid Mansilla" }, { source: "hub-jc-rc", target: "Rosario Carballo y Carrillo" },
@@ -122,6 +126,7 @@ const data = {
         { source: "hub-mo-ap", target: "Antonio Omil" },
         { source: "hub-ao-me", target: "María Ángeles Omil" },
         { source: "hub-ee-ed", target: "Mercedes Endrek" },
+        { source: "hub-at-da", target: "Fenelón Torres Recabarren" },
         { source: "hub-ft-rm", target: "Fenelón Victoriano Torres Martínez" },
         { source: "hub-lg-cg", target: "Jose Tomás Savid García" }, { source: "hub-ft-mo", target: "Maria Ángela Torres" },
         { source: "hub-ft-mo", target: "Ester del Rosario Torres Martínez" },

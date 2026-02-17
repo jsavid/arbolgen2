@@ -1,5 +1,6 @@
 const BIO_DATA = {
     "Adela_Irusta": "Adela Irusta",
+    "Aristides_Torres": "Arístides Torres",
     "Agustina_Montano": "Agustina Montano",
     "Angela_Paez": "Ángela Páez",
     "Antonio_Omil": "Antonio Omil",
@@ -12,6 +13,7 @@ const BIO_DATA = {
     "Dolores_Gudino": "Dolores Gudino",
     "Domingo_del_Rosario_Savid_Mansilla": "Domingo del Rosario Savid Mansilla",
     "Domingo_Garcia_de_Rosas": "Domingo Garcia de Rosas",
+    "Desideria_Arias": "Desideria Arias",
     "Eloisa_Diaz": "Eloísa Díaz",
     "Emiliano_Enderek": "Emiliano Enderek",
     "Fenelon_Savid": "Fene",
@@ -34,6 +36,7 @@ const BIO_DATA = {
     "Juan_Jesus_Teixeira": "El Tatá\nEl Caco",
     "Luis_Eduardo_Savid": "El Lichi",
     "Maria_Angela_Torres": "Alita",
+    "Ester_del_Rosario_Torres_Martinez": "Ester del Rosario Torres Martínez",
     "Maria_Angeles_Omil": "María Ángeles Omil",
     "Maria_Fredebinda_Irusta": "La abuela pollito",
     "Maria_Isabel_Teixeira": "Marita",
